@@ -4,9 +4,9 @@ import torch.nn as nn
 class Mynetwork(nn.Module):
     def __init__(self,input_num=3 , out_num=1,hidden_num=32):
         super().__init__()
-        self.MLP=nn.Sequential(
+        self.MLP=nn.Sequential(nn.Linear(input_num, hidden_num),
             nn.LeakyReLU(),
-            nn.Linear(input_num,hidden_num),
+            nn.Linear(hidden_num,hidden_num),
             nn.LeakyReLU(),
             nn.Linear(hidden_num,out_num)
         )
