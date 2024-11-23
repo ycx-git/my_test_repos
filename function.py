@@ -6,4 +6,4 @@ def fun1(start_value):
     return end_value
 
 def fun2(start_value):
-    pass
+    return np.e**start_value
