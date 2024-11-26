@@ -19,3 +19,6 @@ def fun5(f0):
 
 def fun6(f0):
     return f0**2
+
+def fun7(f0):
+    return f0**5
