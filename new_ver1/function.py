@@ -18,4 +18,4 @@ def fun5(f0):
     return 1/(1-f0)**2
 
 def fun6(f0):
-    return 
+    return f0**2
