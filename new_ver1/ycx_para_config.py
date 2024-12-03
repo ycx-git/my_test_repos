@@ -13,10 +13,13 @@ def fun3_real(fn, x, dx):
 
 #  Data
 if_know_real_kernel=False
-choose_fun=fun3 #normally unchanged
+choose_fun=fun3 
+function_name='fun3'
+#normally unchanged
 choose_real_fun=fun3_real
 
-NN=Mynetwork_2_64
+NN=Mynetwork_2_128
+
 choose_seg_step=16 # normally unchanged because in lx's model the seg_step is 16
 batch=128
 epoch=10000
@@ -44,3 +47,15 @@ use_multi_path=False
 ylim=(0,0.005)
 relative_error=False
 aver_num=64
+
+'''
+调节参数：
+1.NN  7个
+2.batch  128 256 64 32
+3.iteration_num  4 8 16 32
+4.choose_seg_step  16 32 64 128
+5.random_amplititude  0.1 0.2 0.3 0.4  
+
+
+6.rand_move  func
+'''

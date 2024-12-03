@@ -97,7 +97,23 @@ class Mynetwork_2_128(nn.Module):
     def forward(self,f,t,dt):
         input_tensor=torch.cat((f,t,dt),dim=-1)
         return self.MLP(input_tensor)
+ 
+class Mynetwork_2_256(nn.Module):
     
+    name='Mynetwork_2_256'
+    def __init__(self,input_num=3 , out_num=1,hidden_num=256):
+        super().__init__()
+        
+        self.MLP=nn.Sequential(nn.Linear(input_num, hidden_num),
+            nn.LeakyReLU(),
+            nn.Linear(hidden_num,hidden_num),
+            nn.LeakyReLU(),
+            nn.Linear(hidden_num,out_num)
+        )
+        pass
+    def forward(self,f,t,dt):
+        input_tensor=torch.cat((f,t,dt),dim=-1)
+        return self.MLP(input_tensor)  
     
 class Mynetwork_3(nn.Module):
     
@@ -161,6 +177,32 @@ class Mynetwork_5(nn.Module):
     def forward(self,f,t,dt):
         input_tensor=torch.cat((f,t,dt),dim=-1)
         return self.MLP(input_tensor)
+    
+class Mynetwork_6(nn.Module):
+    
+    name='Mynetwork_6_32'
+    def __init__(self,input_num=3 , out_num=1,hidden_num=32):
+        super().__init__()
+        
+        self.MLP=nn.Sequential(nn.Linear(input_num, hidden_num),
+            nn.LeakyReLU(),
+            nn.Linear(hidden_num,hidden_num),
+            nn.LeakyReLU(),
+            nn.Linear(hidden_num,hidden_num),
+            nn.LeakyReLU(),
+            nn.Linear(hidden_num,hidden_num),
+            nn.LeakyReLU(),
+            nn.Linear(hidden_num,hidden_num),
+            nn.LeakyReLU(),
+            nn.Linear(hidden_num,hidden_num),
+            nn.LeakyReLU(),
+            nn.Linear(hidden_num,out_num)
+        )
+        pass
+    def forward(self,f,t,dt):
+        input_tensor=torch.cat((f,t,dt),dim=-1)
+        return self.MLP(input_tensor)
+
 
 
 class kernelNN(nn.Module):
