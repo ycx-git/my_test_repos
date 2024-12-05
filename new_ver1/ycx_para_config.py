@@ -13,8 +13,8 @@ def fun3_real(fn, x, dx):
 
 #  Data
 if_know_real_kernel=False
-choose_fun=fun3 
-function_name='fun3'
+choose_fun=fun1 
+function_name='fun1'
 #normally unchanged
 choose_real_fun=fun3_real
 
@@ -30,7 +30,7 @@ f_start_max=0.9
 random_amplititude=0.3
 
 #used in little loop before lr_schedule
-iteration_num=8
+iteration_num=4
 
 use_lr_schedule=True
 lr_schedule_patience=20

@@ -1,4 +1,5 @@
 import numpy as np
+import torch 
 def fun1(start_value):
     #from 0 to 1 
     #lixiang used model
@@ -22,3 +23,6 @@ def fun6(f0):
 
 def fun7(f0):
     return f0**5
+
+def fun8(f0):
+    return torch.log(f0+1)*torch.exp(f0+1)+f0**2+torch.sqrt(f0)
